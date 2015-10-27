@@ -1,0 +1,11 @@
+<h1>Index of articles</h1>
+<%= link_to "Add a article", new_article_path %>
+<% @article.each do |article| %>
+  <h2><%= link_to article.name, article_path(task) %></h2>
+  <p><%= article.comment %></p>
+  <p><%= article.assigned_to %></p>
+
+<%= link_to "Edit", edit_article_path(article) %>
+<%= link_to "Delete", article_path(article), method: :delete %>
+
+<% end %>
